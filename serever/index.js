@@ -1,7 +1,6 @@
 const express = require("express");
 const socket = require("socket.io");
 const http = require("http");
-const cors = require("cors");
 
 const PORT = process.env.PORT || 5000;
 
@@ -21,7 +20,6 @@ const io = require("socket.io")(server, {
   },
 });
 app.use(router);
-app.use(cors());
 
 // ===================== socket. io ===========================
 io.on("connection", (socket) => {
